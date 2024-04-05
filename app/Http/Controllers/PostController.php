@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,22 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = [
-            [
-                "id" => 1,
-                "name" => "Acheron",
-                "username" => "acheronn",
-                "email" => "annihilator@example.com"
-            ],
-            [
-                "id" => 2,
-                "name" => "Jericho",
-                "username" => "JECOJECO",
-                "email" => "grim@example.com"
-            ]
-        ];
-
-        return response()->json($data);
+        //
     }
 
     /**
@@ -39,12 +24,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json(
-            [
-                "success" => true,
-                "message" => "User account created"
-            ]
-        );
+        return response()->json($request);
     }
 
     /**
@@ -76,8 +56,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        //
+        return response()->json([
+            "message" => $id . "was deleted successfully"
+        ]);
     }
 }
