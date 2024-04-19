@@ -56,6 +56,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function destroy(string $id)
+    // {
+    //     return response()->json([
+    //         "message" => $id . "was deleted successfully"
+    //     ]);
+    // }
     public function destroy(string $id)
     {
         return response()->json([
